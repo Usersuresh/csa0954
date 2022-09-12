@@ -1,0 +1,33 @@
+public class Main{
+   public static int gcd(int a,int b){
+      int res = 0;
+      while (b > 0){
+         int temp = b;
+         b = a % b;
+         a = temp;
+         res = a;
+      }
+      return res;
+   }
+   public static void main(String arg[]){
+      int[] myArray = {8,4,2,16};
+      int result = gcd(myArray[0],myArray[1]);
+      for(int i = 2; i < myArray.length; i++){
+         result = gcd(result, myArray[i]);
+      }
+      System.out.println("Gcd of n numbers is: "+result);
+    int array[] = {8, 4, 2, 16};
+    int lcm = array[0];
+    int gcd = array[0];
+    for(int i=1; i<array.length; i++){
+      gcd = findGCD(array[i], lcm);
+      lcm = (lcm*array[i])/gcd;
+    }
+    System.out.println("LCM of n numbers: "+lcm);
+  }
+  public static int findGCD(int a, int b){
+    if(b == 0)
+      return a;
+    return findGCD(b,a%b);
+  }
+}
