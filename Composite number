@@ -1,0 +1,38 @@
+import java.util.*;
+class Main
+{
+   int flag,n,i,j;
+   
+   Main()
+     {
+         int number;
+   Scanner sc=new Scanner(System.in);
+   System.out.println("enter first number");
+   number=sc.nextInt();
+       System.out.print("Enter last number: ");
+       Scanner in=new Scanner(System.in);
+       n=in.nextInt();
+       if(number>0 & n>0)
+       {
+           System.out.println("composite numbers are:");
+       for(i=number;i<=n;i++ )
+        {
+            flag=0;
+           for(j=2;j<i;j++)
+             {
+                 if(i % j == 0)
+                    flag++;
+             }
+           if(flag!=0)
+            System.out.println(i);
+        }
+    }
+    else{
+        System.out.println("enter valid number");
+    }
+     }
+public static void main(String args[])   
+      {
+           Main ob=new Main();
+      }
+}
