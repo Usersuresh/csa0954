@@ -1,0 +1,26 @@
+import java.util.*;
+class Main{
+    public static void main(String[] args)
+    {
+        int count = 0;
+        String s;
+        Scanner sc = new Scanner(System.in);
+      System.out.println("Enter the charecters ::");
+      s = sc.nextLine();
+      System.out.println("special charecters are");
+        for (int i = 0; i < s.length(); i++) {
+            if (!Character.isDigit(s.charAt(i))
+                && !Character.isLetter(s.charAt(i))
+                && !Character.isWhitespace(s.charAt(i))) {
+                count++;
+                System.out.println(s.charAt(i));
+            }
+        }
+        if (count == 0)
+            System.out.println(
+                "No Special Characters found.");
+        else
+            System.out.println(count + " "
+                + "Special Characters found.");
+    }
+}
